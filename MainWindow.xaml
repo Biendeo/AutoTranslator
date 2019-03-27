@@ -1,0 +1,47 @@
+﻿<Window x:Class="AutoTranslateWindow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoTranslateWindow"
+		xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+		mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="500"/>
+		</Grid.ColumnDefinitions>
+		<TextBox Name="InputLanguageTextBlock" Grid.Row="0" Grid.Column="0" Text="Hello!" IsReadOnly="True"/>
+		<TextBox Name="OutputLanguageTextBlock" Grid.Row="0" Grid.Column="1" Text="Hello!" IsReadOnly="True"/>
+		<Grid Grid.Row="0" Grid.Column="2">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<Grid Grid.Row="0" Grid.Column="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="Auto"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				<Label Content="Left X:" Grid.Row="0" Grid.Column="0"/>
+				<Label Content="Top Y:" Grid.Row="1" Grid.Column="0"/>
+				<Label Content="Right X:" Grid.Row="2" Grid.Column="0"/>
+				<Label Content="Bottom Y:" Grid.Row="3" Grid.Column="0"/>
+				<xctk:IntegerUpDown Name="LeftXIntegerUpDown" Grid.Row="0" Grid.Column="1" ValueChanged="IntegerUpDown_ValueChanged"/>
+				<xctk:IntegerUpDown Name="TopYIntegerUpDown" Grid.Row="1" Grid.Column="1" ValueChanged="IntegerUpDown_ValueChanged_1"/>
+				<xctk:IntegerUpDown Name="RightXIntegerUpDown" Grid.Row="2" Grid.Column="1" ValueChanged="IntegerUpDown_ValueChanged_2"/>
+				<xctk:IntegerUpDown Name="BottomYIntegerUpDown" Grid.Row="3" Grid.Column="1" ValueChanged="IntegerUpDown_ValueChanged_3"/>
+			</Grid>
+			<Image Name="ImageView" Grid.Row="1"/>
+		</Grid>
+
+	</Grid>
+</Window>
